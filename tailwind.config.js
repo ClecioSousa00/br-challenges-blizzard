@@ -6,7 +6,12 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        sm: { max: '639px' },
+        // => @media (max-width: 639px) { ... }
+      },
+    },
   },
   plugins: [],
 }
