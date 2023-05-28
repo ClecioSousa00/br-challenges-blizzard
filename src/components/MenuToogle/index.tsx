@@ -18,8 +18,7 @@ export const MenuToogle = ({ handleMenu, menuIsOpen }: menuToogleProps) => {
       <span
         className={cn(
           'h-[2px] w-7 rounded bg-white transition-all',
-          menuIsOpen &&
-            ' -translate-x-[4px] translate-y-[5px] -rotate-45 transform',
+          menuIsOpen && 'translate-y-[5px] -rotate-45 transform',
         )}
       ></span>
       <span
@@ -31,8 +30,7 @@ export const MenuToogle = ({ handleMenu, menuIsOpen }: menuToogleProps) => {
       <span
         className={cn(
           'h-[2px] w-7 rounded bg-white transition-all',
-          menuIsOpen &&
-            ' -translate-x-[0.26rem] -translate-y-[5px]  rotate-45 transform',
+          menuIsOpen && '-translate-y-[5px]  rotate-45 transform',
         )}
       ></span>
     </button>

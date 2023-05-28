@@ -11,6 +11,13 @@ module.exports = {
         sm: { max: '639px' },
         // => @media (max-width: 639px) { ... }
       },
+      backgroundImage: {
+        bgMenu:
+          'linear-gradient(180deg, #020203 0%, rgba(14, 17, 23, 0.92) 96.35%, rgba(14, 17, 23, 0.9) 100%)',
+      },
+      fontFamily: {
+        sans: 'var(--font-poppins)',
+      },
     },
   },
   plugins: [],
