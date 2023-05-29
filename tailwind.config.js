@@ -18,6 +18,9 @@ module.exports = {
       fontFamily: {
         sans: 'var(--font-poppins)',
       },
+      colors: {
+        buttonBg: '#00AEFF',
+      },
     },
   },
   plugins: [],

@@ -2,6 +2,8 @@
 import { useState } from 'react'
 import { MenuToogle } from '../MenuToogle'
 import { cn } from '@/app/lib/utils'
+import { BuutonAccount } from '../ButtonAccount'
+import { ButtonLogin } from '../ButtonLogin'
 
 export const NavBar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -29,6 +31,10 @@ export const NavBar = () => {
           <li className="text-sm font-normal">Notícias</li>
           <li className="text-sm font-normal">Suporte</li>
         </ul>
+        <div className="mt-8 flex justify-center space-x-2">
+          <BuutonAccount />
+          <ButtonLogin />
+        </div>
       </nav>
       <MenuToogle handleMenu={handleMenu} menuIsOpen={menuIsOpen} />
     </>
