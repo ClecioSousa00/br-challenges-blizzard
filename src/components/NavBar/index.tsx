@@ -4,12 +4,22 @@ import { MenuToogle } from '../MenuToogle'
 import { cn } from '@/app/lib/utils'
 import { BuutonAccount } from '../ButtonAccount'
 import { ButtonLogin } from '../ButtonLogin'
+import { ButtonOptions } from '../ButtonOptions'
 
 export const NavBar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
+  const [optionIsOpenGame, setOptionIsOpenGame] = useState(false)
+  const [optionIsOpenSports, setOptionIsOpenSports] = useState(false)
 
   const handleMenu = (): void => {
     setMenuIsOpen(!menuIsOpen)
+  }
+
+  const handleOptionsGame = () => {
+    setOptionIsOpenGame(!optionIsOpenGame)
+  }
+  const handleOptionsSports = () => {
+    setOptionIsOpenSports(!optionIsOpenSports)
   }
 
   return (
@@ -20,16 +30,24 @@ export const NavBar = () => {
           menuIsOpen && 'w-[70vw]',
         )}
       >
-        <ul className="sm:mt-14  sm:flex sm:flex-col sm:items-center sm:gap-5">
+        <ul className="flex  sm:mt-14 sm:flex-col sm:items-center  sm:gap-5">
           <li>
-            <button className="text-sm font-normal">Jogos</button>
+            <ButtonOptions
+              text="Jogos"
+              handleOptions={handleOptionsGame}
+              optionIsOpen={optionIsOpenGame}
+            />
           </li>
           <li>
-            <button className="text-sm font-normal">Esportes</button>
+            <ButtonOptions
+              text="Esportes"
+              handleOptions={handleOptionsSports}
+              optionIsOpen={optionIsOpenSports}
+            />
           </li>
-          <li className="text-sm font-normal">Loja</li>
-          <li className="text-sm font-normal">Notícias</li>
-          <li className="text-sm font-normal">Suporte</li>
+          <li className="">Loja</li>
+          <li className="">Notícias</li>
+          <li className="">Suporte</li>
         </ul>
         <div className="mt-8 flex justify-center space-x-2">
           <BuutonAccount />
