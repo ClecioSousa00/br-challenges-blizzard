@@ -20,6 +20,7 @@ module.exports = {
       },
       colors: {
         buttonBg: '#00AEFF',
+        dropDownFooter: '#15171B',
       },
     },
   },

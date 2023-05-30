@@ -15,6 +15,10 @@ import icon14 from '../../assets/images/icosDropdown/image 17-1.png'
 import icon15 from '../../assets/images/icosDropdown/image 17-2.png'
 import icon16 from '../../assets/images/icosDropdown/image 17-3.png'
 import icon17 from '../../assets/images/icosDropdown/image 17-4.png'
+import iconGames from '../../assets/images/icosDropdown/Group 5.svg'
+import iconBattleNet from '../../assets/images/icosDropdown/icon-logo.svg'
+import iconDownload from '../../assets/images/icosDropdown/icon-downloads.svg'
+import iconChat from '../../assets/images/icosDropdown/icon-chat.svg'
 
 import { StaticImageData } from 'next/image'
 
@@ -94,5 +98,24 @@ export const sportsIconsDropdown: iconsInfos[] = [
   {
     image: icon17,
     name: 'Liga de Overwatch®',
+  },
+]
+
+export const iconDropdownFooter: iconsInfos[] = [
+  {
+    image: iconGames,
+    name: 'Ver todos os jogos',
+  },
+  {
+    image: iconBattleNet,
+    name: 'Aplicativo Battle.net',
+  },
+  {
+    image: iconDownload,
+    name: 'Downloads',
+  },
+  {
+    image: iconChat,
+    name: 'Fóruns dos jogos',
   },
 ]
