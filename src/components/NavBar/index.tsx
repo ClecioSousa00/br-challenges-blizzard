@@ -27,10 +27,10 @@ export const NavBar = () => {
       <nav
         className={cn(
           'w-0 sm:absolute sm:right-0 sm:top-0 sm:z-10 sm:h-screen sm:overflow-hidden sm:bg-bgMenu sm:transition-all',
-          menuIsOpen && 'w-[70vw]',
+          menuIsOpen && 'w-screen',
         )}
       >
-        <ul className="flex  sm:mt-14 sm:flex-col sm:items-center  sm:gap-5">
+        <ul className="relative flex sm:mt-14 sm:flex-col sm:items-center  sm:gap-5">
           <li>
             <ButtonOptions
               text="Jogos"
@@ -45,9 +45,9 @@ export const NavBar = () => {
               optionIsOpen={optionIsOpenSports}
             />
           </li>
-          <li className="">Loja</li>
-          <li className="">Notícias</li>
-          <li className="">Suporte</li>
+          <li>Loja</li>
+          <li>Notícias</li>
+          <li>Suporte</li>
         </ul>
         <div className="mt-8 flex justify-center space-x-2">
           <BuutonAccount />
