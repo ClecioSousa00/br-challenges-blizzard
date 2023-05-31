@@ -13,7 +13,7 @@ export const MenuToogle = ({ handleMenu, menuIsOpen }: menuToogleProps) => {
   return (
     <button
       onClick={handleClickMenu}
-      className="z-20 flex cursor-pointer flex-col gap-1"
+      className="z-20 flex cursor-pointer flex-col gap-1 lg:hidden"
     >
       <span
         className={cn(

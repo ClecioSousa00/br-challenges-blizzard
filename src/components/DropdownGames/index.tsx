@@ -25,9 +25,11 @@ export const DropdownGames = () => {
   }
 
   return (
-    <div className=" absolute left-0 z-20 flex h-[60vh] w-screen flex-col items-center justify-center bg-bgMenu ">
-      <div className="mb-3 grid  grid-cols-3 gap-3">{showCardsGames()}</div>
-      <div className=" flex flex-wrap justify-between  gap-x-4 gap-y-2 bg-dropDownFooter p-4">
+    <div className=" absolute left-0 z-20 flex h-screen w-screen flex-col items-center bg-bgMenu lg:fixed lg:top-0 lg:-z-50 lg:h-[75vh] lg:justify-end">
+      <div className="mb-3 grid grid-cols-3 gap-3 md:grid-cols-4  lg:mb-9 lg:grid-cols-6 lg:gap-12">
+        {showCardsGames()}
+      </div>
+      <div className=" flex w-full flex-wrap justify-between gap-x-4 gap-y-2 bg-dropDownFooter p-4 lg:justify-center lg:gap-x-10 lg:py-6">
         {showIcons()}
       </div>
     </div>

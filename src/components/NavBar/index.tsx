@@ -16,9 +16,11 @@ export const NavBar = () => {
   }
 
   const handleOptionsGame = () => {
+    setOptionIsOpenSports(false)
     setOptionIsOpenGame(!optionIsOpenGame)
   }
   const handleOptionsSports = () => {
+    setOptionIsOpenGame(false)
     setOptionIsOpenSports(!optionIsOpenSports)
   }
 
@@ -26,11 +28,11 @@ export const NavBar = () => {
     <>
       <nav
         className={cn(
-          'w-0 sm:absolute sm:right-0 sm:top-0 sm:z-10 sm:h-screen sm:overflow-hidden sm:bg-bgMenu sm:transition-all',
+          'absolute right-0 top-0 z-10 h-screen w-0 overflow-hidden bg-bgMenu transition-all md:top-20 lg:static lg:h-auto lg:w-auto lg:bg-none ',
           menuIsOpen && 'w-screen',
         )}
       >
-        <ul className="relative flex sm:mt-14 sm:flex-col sm:items-center  sm:gap-5">
+        <ul className="relative mt-14 flex flex-col items-center gap-5  lg:mt-0 lg:flex-row">
           <li>
             <ButtonOptions
               text="Jogos"
@@ -49,12 +51,18 @@ export const NavBar = () => {
           <li>Notícias</li>
           <li>Suporte</li>
         </ul>
-        <div className="mt-8 flex justify-center space-x-2">
+        <div className="mt-8 flex justify-center space-x-2 md:hidden">
           <BuutonAccount />
           <ButtonLogin />
         </div>
       </nav>
-      <MenuToogle handleMenu={handleMenu} menuIsOpen={menuIsOpen} />
+      <div className="justify-between md:flex md:items-center md:gap-20">
+        <div className="hidden   md:flex  md:space-x-2">
+          <BuutonAccount />
+          <ButtonLogin />
+        </div>
+        <MenuToogle handleMenu={handleMenu} menuIsOpen={menuIsOpen} />
+      </div>
     </>
   )
 }
