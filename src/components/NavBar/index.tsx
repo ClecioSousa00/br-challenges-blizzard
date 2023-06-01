@@ -56,7 +56,7 @@ export const NavBar = () => {
           <ButtonLogin />
         </div>
       </nav>
-      <div className="justify-between md:flex md:items-center md:gap-20">
+      <div className="z-50 justify-between md:flex md:items-center md:gap-20">
         <div className="hidden   md:flex  md:space-x-2">
           <BuutonAccount />
           <ButtonLogin />
