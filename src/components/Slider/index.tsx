@@ -2,21 +2,44 @@
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, Pagination, Navigation } from 'swiper'
+import Image from 'next/image'
+import { ReactNode } from 'react'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import './Slider.css'
-import Image from 'next/image'
 
-import diabloIIIBanner from '../../assets/images/banner-hero/games/diablo-bg-mobile.png'
-import hearthstoneBanner from '../../assets/images/banner-hero/games/hearthstone-bg-mobile.png'
-import wowBanner from '../../assets/images/banner-hero/games/wow-bg-mobile.png'
-import diabloBanner from '../../assets/images/banner-hero/games/diablo-I-mobile.png'
-import starCraftBanner from '../../assets/images/banner-hero/games/star-crafter.png'
+import { InfosSlide } from '../InfosSlide'
+import { descriptionSlide } from '../InfosSlide/sliderInfos'
 
 export const Slider = () => {
+  const showSlide = (): ReactNode => {
+    return descriptionSlide.map((slide, index) => {
+      return (
+        <SwiperSlide key={index} className="">
+          <picture>
+            <source media="(min-width: 1024px)" srcSet={slide.srcSet} />
+            <Image
+              className="block h-full w-full object-cover object-center "
+              src={slide.src}
+              width={1000}
+              height={1000}
+              alt={slide.alt}
+            />
+            <InfosSlide
+              title={slide.title}
+              subTitle={slide.subTitle}
+              textButton={slide.textButton}
+              icon={slide.icon}
+            />
+          </picture>
+        </SwiperSlide>
+      )
+    })
+  }
+
   return (
-    <div className=" h-screen">
+    <div className="">
       <Swiper
         centeredSlides={true}
         autoplay={{
@@ -27,9 +50,19 @@ export const Slider = () => {
           clickable: true,
         }}
         modules={[Autoplay, Pagination, Navigation]}
-        className="h-full "
+        className="relative h-screen"
       >
-        <SwiperSlide className="">
+        {showSlide()}
+      </Swiper>
+    </div>
+  )
+}
+
+// shadow
+// className="fixed inset-0 z-20  h-screen w-full after:fixed after:inset-0  after:h-screen after:w-screen  after:bg-shadowSlide after:content-['']"
+
+{
+  /* <SwiperSlide className="">
           <picture>
             <source media="(min-width: 1024px)" srcSet="/diablo-bg.png" />
             <Image
@@ -39,6 +72,7 @@ export const Slider = () => {
               height={1000}
               alt="diablo IV"
             />
+            <InfosSlide />
           </picture>
         </SwiperSlide>
         <SwiperSlide>
@@ -52,6 +86,7 @@ export const Slider = () => {
               alt="HearthStone"
             />
           </picture>
+          <InfosSlide />
         </SwiperSlide>
         <SwiperSlide>
           <picture>
@@ -64,6 +99,7 @@ export const Slider = () => {
               alt="WOW"
             />
           </picture>
+          <InfosSlide />
         </SwiperSlide>
         <SwiperSlide>
           <picture>
@@ -79,6 +115,7 @@ export const Slider = () => {
               alt="Diablo"
             />
           </picture>
+          <InfosSlide />
         </SwiperSlide>
         <SwiperSlide>
           <picture>
@@ -94,11 +131,6 @@ export const Slider = () => {
               alt="StarCraft"
             />
           </picture>
-        </SwiperSlide>
-      </Swiper>
-    </div>
-  )
+          <InfosSlide />
+        </SwiperSlide> */
 }
-
-// shadow
-// className="fixed inset-0 z-20  h-screen w-full after:fixed after:inset-0  after:h-screen after:w-screen  after:bg-shadowSlide after:content-['']"

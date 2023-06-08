@@ -1,11 +1,11 @@
 import { Header } from '@/components/Header'
-import { Slider } from '@/components/Slider'
+import { Hero } from '@/components/Hero'
 
 export default function Home() {
   return (
     <>
       <Header />
-      <Slider />
+      <Hero />
     </>
   )
 }
