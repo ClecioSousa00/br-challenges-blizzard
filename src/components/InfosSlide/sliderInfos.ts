@@ -20,6 +20,7 @@ type description = {
   subTitle: string
   textButton: string
   icon: StaticImageData
+  buttonIcon: boolean
 }
 
 export const descriptionSlide: description[] = [
@@ -31,6 +32,7 @@ export const descriptionSlide: description[] = [
     subTitle: 'O retorno de Lilith traz uma era de escuridão e sofrimento',
     textButton: 'Jogue agora',
     icon: iconDiabloIV,
+    buttonIcon: false,
   },
   {
     src: hearthstoneBanner,
@@ -40,6 +42,7 @@ export const descriptionSlide: description[] = [
     subTitle: 'A Horda e a Aliança se encontraram no Vale Alterac para lutar',
     textButton: 'Reserve agora na pré-venda',
     icon: iconHearthStone,
+    buttonIcon: true,
   },
   {
     src: wowBanner,
@@ -49,6 +52,7 @@ export const descriptionSlide: description[] = [
     subTitle: 'O que jaz além do mundo que você conhece?',
     textButton: 'Reserve agora na pré-venda',
     icon: iconWow,
+    buttonIcon: true,
   },
   {
     src: diabloBanner,
@@ -59,6 +63,7 @@ export const descriptionSlide: description[] = [
       'Entre em um mundo sombrio de terror e coragem contra o mal supremo',
     textButton: 'Jogar agora',
     icon: iconDiablo,
+    buttonIcon: false,
   },
   {
     src: starCraftBanner,
@@ -69,5 +74,6 @@ export const descriptionSlide: description[] = [
       'Lidere as facções em uma luta pela sobrevivência e conquista no espaço sideral',
     textButton: 'Jogar agora',
     icon: iconStarCraft,
+    buttonIcon: false,
   },
 ]
