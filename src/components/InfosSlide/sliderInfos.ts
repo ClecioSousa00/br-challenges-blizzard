@@ -70,8 +70,7 @@ export const descriptionSlide: description[] = [
     srcSet: '/star-craft-desktop.jpg',
     alt: 'World Warcraft',
     title: 'Embarque em uma batalha intergaláctica de proporções épicas',
-    subTitle:
-      'Lidere as facções em uma luta pela sobrevivência e conquista no espaço sideral',
+    subTitle: 'Lidere as facções em uma luta pelo espaço sideral',
     textButton: 'Jogar agora',
     icon: iconStarCraft,
     buttonIcon: false,

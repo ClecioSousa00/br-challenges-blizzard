@@ -2,6 +2,13 @@ import Image, { StaticImageData } from 'next/image'
 import { FiUser } from 'react-icons/fi'
 import { ButtonHero } from '../ButtonHero'
 
+import imageGif from '../../assets/images/banner-hero/games/diablo-animation-cover.png'
+import gifDiablo from '../../assets/images/banner-hero/games/diablo-animation.gif'
+import { useState } from 'react'
+
+import buttonPlay from '../../assets/images/banner-hero/games/buttonPlay.png'
+import { cn } from '@/app/lib/utils'
+
 type infosSlideProps = {
   title: string
   subTitle: string
@@ -17,21 +24,48 @@ export const InfosSlide = ({
   icon,
   buttonIcon,
 }: infosSlideProps) => {
+  const [showGif, setShowGif] = useState(false)
+
+  const openGif = () => {
+    setShowGif(!showGif)
+  }
+
   return (
-    <div className="absolute top-0 z-40  flex h-full w-full items-center px-5">
-      <div className="max-w-[18rem]">
-        <h1 className="z-[80] text-[2.5rem] font-bold leading-10">{title}</h1>
-        <p className="mb-8 mt-4 text-lg font-normal leading-5">{subTitle}</p>
+    <div className="absolute top-0 z-30  flex h-full w-full items-center px-5 md:justify-between">
+      <div className="max-w-[18rem] md:max-w-[35.125rem]">
+        <h1 className=" text-[2.5rem] font-bold leading-10 md:text-6xl ">
+          {title}
+        </h1>
+        <p className="mb-8 mt-4 text-lg font-normal leading-5 md:text-lg">
+          {subTitle}
+        </p>
         <ButtonHero className="flex items-center gap-2">
           {buttonIcon && <FiUser size={18} />}
           {textButton}
         </ButtonHero>
       </div>
-      <div className="hidden">
-        <Image src={icon} alt="Logo Diablo IV" />
-        <div>
-          <p>Assista ao trailer</p>
-          <Image src={icon} alt="Logo Diablo IV" />
+      <div className="hidden md:flex md:flex-col md:justify-between md:gap-14">
+        <Image src={icon} width={288} height={200} alt="Logo Diablo IV" />
+        <div className="h-[158px] w-[280px]">
+          <p className="text-right">Assista ao trailer</p>
+          <div
+            className="relative h-full w-full cursor-pointer"
+            onMouseEnter={openGif}
+            onMouseLeave={openGif}
+          >
+            <div className="absolute  flex h-full w-full items-center justify-center overflow-hidden">
+              <Image
+                className={cn(showGif && 'mt-72 transition-all duration-500')}
+                src={buttonPlay}
+                alt="botão de play"
+              />
+            </div>
+            <Image
+              className="h-full w-full object-cover object-center"
+              src={showGif ? gifDiablo : imageGif}
+              alt="diablo"
+            />
+          </div>
         </div>
       </div>
     </div>
