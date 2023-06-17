@@ -10,6 +10,18 @@ import iconWow from '../../assets/images/banner-hero/games/wow-logo.png'
 import iconDiablo from '../../assets/images/banner-hero/games/di-logo-960 (1).png'
 import iconStarCraft from '../../assets/images/banner-hero/games/StarCraft.png'
 
+import diabloIVImgGif from '../../assets/images/banner-hero/games/diablo-animation-cover.png'
+import hearthStoneImgGif from '../../assets/images/banner-hero/games/hearthstone-animation-cover.png'
+import WowImgGif from '../../assets/images/banner-hero/games/wow-banner-gif.png'
+import diabloIImgGif from '../../assets/images/banner-hero/games/diablo-I-banner-gif.png'
+import starCraftImgGif from '../../assets/images/banner-hero/games/starCraft-banner-gif.png'
+
+import diabloIVGif from '../../assets/images/banner-hero/games/diablo-animation.gif'
+import hearthStoneGif from '../../assets/images/banner-hero/games/hearthstone-animation.gif'
+import WowGif from '../../assets/images/banner-hero/games/wow-animation.gif'
+import diabloIGif from '../../assets/images/banner-hero/games/diablo-I-animation.gif'
+import starCraftGif from '../../assets/images/banner-hero/games/starCraft-animation.gif'
+
 import { StaticImageData } from 'next/image'
 
 type description = {
@@ -21,6 +33,8 @@ type description = {
   textButton: string
   icon: StaticImageData
   buttonIcon: boolean
+  BgGif: StaticImageData
+  gif: StaticImageData
 }
 
 export const descriptionSlide: description[] = [
@@ -33,6 +47,8 @@ export const descriptionSlide: description[] = [
     textButton: 'Jogue agora',
     icon: iconDiabloIV,
     buttonIcon: false,
+    BgGif: diabloIVImgGif,
+    gif: diabloIVGif,
   },
   {
     src: hearthstoneBanner,
@@ -43,6 +59,8 @@ export const descriptionSlide: description[] = [
     textButton: 'Reserve agora na pré-venda',
     icon: iconHearthStone,
     buttonIcon: true,
+    BgGif: hearthStoneImgGif,
+    gif: hearthStoneGif,
   },
   {
     src: wowBanner,
@@ -53,6 +71,8 @@ export const descriptionSlide: description[] = [
     textButton: 'Reserve agora na pré-venda',
     icon: iconWow,
     buttonIcon: true,
+    BgGif: WowImgGif,
+    gif: WowGif,
   },
   {
     src: diabloBanner,
@@ -64,6 +84,8 @@ export const descriptionSlide: description[] = [
     textButton: 'Jogar agora',
     icon: iconDiablo,
     buttonIcon: false,
+    BgGif: diabloIImgGif,
+    gif: diabloIGif,
   },
   {
     src: starCraftBanner,
@@ -74,5 +96,7 @@ export const descriptionSlide: description[] = [
     textButton: 'Jogar agora',
     icon: iconStarCraft,
     buttonIcon: false,
+    BgGif: starCraftImgGif,
+    gif: starCraftGif,
   },
 ]

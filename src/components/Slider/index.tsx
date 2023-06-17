@@ -25,6 +25,7 @@ export const Slider = () => {
               width={1000}
               height={1000}
               alt={slide.alt}
+              priority={true}
             />
           </picture>
           <InfosSlide
@@ -33,6 +34,8 @@ export const Slider = () => {
             textButton={slide.textButton}
             icon={slide.icon}
             buttonIcon={slide.buttonIcon}
+            imgGif={slide.BgGif}
+            gif={slide.gif}
           />
         </SwiperSlide>
       )
@@ -44,7 +47,7 @@ export const Slider = () => {
       <Swiper
         centeredSlides={true}
         autoplay={{
-          delay: 3500,
+          delay: 4500,
           disableOnInteraction: false,
         }}
         pagination={{

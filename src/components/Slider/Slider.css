@@ -18,3 +18,19 @@
 .swiper-pagination-bullet:nth-child(5){
   background-image: url("../../assets/images/banner-hero/icons/game-5.png");
 }
+
+@media screen and (min-width: 1024px) {
+  .swiper-pagination-bullets{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-left: 96px;
+    gap: 20px;
+   
+  
+  }
+  .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    width: 0;
+}
+}

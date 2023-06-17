@@ -2,8 +2,6 @@ import Image, { StaticImageData } from 'next/image'
 import { FiUser } from 'react-icons/fi'
 import { ButtonHero } from '../ButtonHero'
 
-import imageGif from '../../assets/images/banner-hero/games/diablo-animation-cover.png'
-import gifDiablo from '../../assets/images/banner-hero/games/diablo-animation.gif'
 import { useState } from 'react'
 
 import buttonPlay from '../../assets/images/banner-hero/games/buttonPlay.png'
@@ -15,6 +13,8 @@ type infosSlideProps = {
   textButton: string
   icon: StaticImageData
   buttonIcon: boolean
+  imgGif: StaticImageData
+  gif: StaticImageData
 }
 
 export const InfosSlide = ({
@@ -23,6 +23,8 @@ export const InfosSlide = ({
   textButton,
   icon,
   buttonIcon,
+  imgGif,
+  gif,
 }: infosSlideProps) => {
   const [showGif, setShowGif] = useState(false)
 
@@ -31,9 +33,9 @@ export const InfosSlide = ({
   }
 
   return (
-    <div className="absolute top-0 z-30  flex h-full w-full items-center px-5 md:justify-between">
+    <div className="absolute top-0 z-30  flex h-full w-full items-center px-5 md:justify-between lg:justify-end lg:gap-44 lg:px-24 2xl:justify-around">
       <div className="max-w-[18rem] md:max-w-[35.125rem]">
-        <h1 className=" text-[2.5rem] font-bold leading-10 md:text-6xl ">
+        <h1 className=" text-[2.5rem] font-bold leading-10 md:text-6xl">
           {title}
         </h1>
         <p className="mb-8 mt-4 text-lg font-normal leading-5 md:text-lg">
@@ -50,8 +52,7 @@ export const InfosSlide = ({
           <p className="text-right">Assista ao trailer</p>
           <div
             className="relative h-full w-full cursor-pointer"
-            onMouseEnter={openGif}
-            onMouseLeave={openGif}
+            onClick={openGif}
           >
             <div className="absolute  flex h-full w-full items-center justify-center overflow-hidden">
               <Image
@@ -61,8 +62,8 @@ export const InfosSlide = ({
               />
             </div>
             <Image
-              className="h-full w-full object-cover object-center"
-              src={showGif ? gifDiablo : imageGif}
+              className="h-full w-full object-cover object-center "
+              src={showGif ? gif : imgGif}
               alt="diablo"
             />
           </div>
