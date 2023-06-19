@@ -23,6 +23,8 @@ module.exports = {
       colors: {
         buttonBg: '#00AEFF',
         dropDownFooter: '#15171B',
+        borderCard: '#212428',
+        categoryColor: '#E5E5E2',
       },
     },
   },
