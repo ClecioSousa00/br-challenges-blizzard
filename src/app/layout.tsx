@@ -5,7 +5,6 @@ import { Poppins } from 'next/font/google'
 const poppins = Poppins({
   subsets: ['latin'],
   weight: ['400', '500', '600', '700'],
-  variable: '--font-poppins',
 })
 
 export const metadata = {
@@ -15,10 +14,8 @@ export const metadata = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="pt-BR">
-      <body className={`${poppins.variable} bg-black text-white`}>
-        {children}
-      </body>
+    <html lang="pt-BR" className={`${poppins.className}`}>
+      <body className={` bg-black text-white`}>{children}</body>
     </html>
   )
 }

@@ -18,7 +18,7 @@ module.exports = {
           'linear-gradient(180deg, rgba(0, 0, 0, 0.3) 18%, rgba(0,0,0,0) 100%)',
       },
       fontFamily: {
-        sans: 'var(--font-poppins)',
+        sans: ['var(--font-poppins)'],
       },
       colors: {
         buttonBg: '#00AEFF',

@@ -65,6 +65,7 @@ export const InfosSlide = ({
               className="h-full w-full object-cover object-center "
               src={showGif ? gif : imgGif}
               alt="diablo"
+              priority={true}
             />
           </div>
         </div>
