@@ -1,6 +1,7 @@
 import { axiosClient } from '@/services/axiosClient'
 import Image, { StaticImageData } from 'next/image'
 import LogoBlizzard from '../../assets/images/logo-blizzard.png'
+import { SvgAllGames } from '../icons/SvgAllGames'
 
 type gamePros = {
   name: string
@@ -19,12 +20,15 @@ const showGamesCard = async () => {
   return games.map((game, index) => {
     return (
       <div className="" key={index}>
-        <div className="relative overflow-hidden rounded object-cover  object-center md:h-[17.375rem] md:w-[12.75rem] lg:h-[24rem] lg:w-[17.5rem]">
+        <div
+          className="relative h-[13.375rem] w-[9.625rem] overflow-hidden rounded object-cover  object-center md:h-[17.375rem] md:w-[12.75rem] 
+          lg:h-[24rem] lg:w-[17.5rem]"
+        >
           <Image
             className="w-full"
             src={game.image}
-            width={154}
-            height={214}
+            width={1000}
+            height={1000}
             unoptimized={true}
             quality={75} // {number 1-100}
             alt={game.name}
@@ -52,9 +56,19 @@ export default async function SectionGames() {
   return (
     <section className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-3 md:gap-x-8 md:gap-y-10 lg:grid-cols-4 lg:gap-y-12">
       {await showGamesCard()}
-      <div className="flex h-[13.375rem] w-[9.625rem] flex-col items-center justify-center gap-y-4 rounded border-2 border-borderCard md:h-[17.375rem] md:w-[12.75rem] lg:h-[24rem] lg:w-[17.5rem]">
-        <Image src={LogoBlizzard} alt="Logo da Blizzard" />
-        <p>Ver todos jogos</p>
+      <div
+        className="flex h-[13.375rem] w-[9.625rem] flex-col items-center justify-center gap-y-4 rounded border-2
+       border-borderCard md:h-[17.375rem] md:w-[12.75rem] md:gap-y-8 lg:h-[24rem] lg:w-[17.5rem]"
+      >
+        <Image
+          className="w-16 md:w-28"
+          src={LogoBlizzard}
+          alt="Logo da Blizzard"
+        />
+        <div className="flex items-center gap-3">
+          <SvgAllGames fill="white" />
+          <p className="text-sm md:text-base">Ver todos jogos</p>
+        </div>
       </div>
     </section>
   )

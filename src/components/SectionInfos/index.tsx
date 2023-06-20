@@ -20,7 +20,7 @@ export const SectionInfos = () => {
         <SvgPlaystation />
       </div>
       <div className="flex items-center gap-3">
-        <SvgAllGames />
+        <SvgAllGames fill="#61CDFF" />
         <span className="text-sm font-semibold text-buttonBg md:text-base">
           Ver todos jogos
         </span>

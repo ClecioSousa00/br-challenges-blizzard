@@ -4,10 +4,11 @@ import logoBattleNet from '../../assets/images/logo-battle-net.png'
 import { SvgPage } from '../icons/SvgPage'
 import { SvgConect } from '../icons/SvgConect'
 import { SvgBuy } from '../icons/SvgBuy'
+import { ButtonSystem } from '../ButtonSystem'
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-bgFooter bg-center bg-no-repeat px-6 pt-16">
+    <footer className="w-full bg-bgFooter bg-center bg-no-repeat object-cover px-6 pb-14 pt-16 md:pb-32">
       <Image src={logoBattleNet} alt="Logo Battlenet" />
       <h2 className="mb-8 mt-8 max-w-[204px] text-[1.75rem] font-bold">
         Baixe agora o battle.net
@@ -27,10 +28,11 @@ export const Footer = () => {
         </div>
         <div className="flex gap-4">
           <SvgBuy />
-          <p className="text-lg font-normal text-gray-400">
+          <p className="mb-10 text-lg font-normal text-gray-400">
             Compre jogos e items digitais
           </p>
         </div>
+        <ButtonSystem />
       </div>
     </footer>
   )
