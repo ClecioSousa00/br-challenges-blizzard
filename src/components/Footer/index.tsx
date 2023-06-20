@@ -4,7 +4,8 @@ import logoBattleNet from '../../assets/images/logo-battle-net.png'
 import { SvgPage } from '../icons/SvgPage'
 import { SvgConect } from '../icons/SvgConect'
 import { SvgBuy } from '../icons/SvgBuy'
-import { ButtonSystem } from '../ButtonSystem'
+import { ButtonHero } from '../ButtonHero'
+import { SvgWin } from '../icons/SvgWin'
 
 export const Footer = () => {
   return (
@@ -32,7 +33,10 @@ export const Footer = () => {
             Compre jogos e items digitais
           </p>
         </div>
-        <ButtonSystem />
+        <ButtonHero className="flex gap-2">
+          <SvgWin />
+          <span>Baixe para o Windows</span>
+        </ButtonHero>
       </div>
     </footer>
   )
