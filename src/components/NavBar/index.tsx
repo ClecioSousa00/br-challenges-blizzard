@@ -5,6 +5,7 @@ import { cn } from '@/app/lib/utils'
 import { BuutonAccount } from '../ButtonAccount'
 import { ButtonLogin } from '../ButtonLogin'
 import { ButtonOptions } from '../ButtonOptions'
+import { Modal } from '../Modal'
 
 export const NavBar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
@@ -57,12 +58,13 @@ export const NavBar = () => {
         </div>
       </nav>
       <div className="z-50 justify-between md:flex md:items-center md:gap-20">
-        <div className="hidden   md:flex  md:space-x-2">
+        <div className="hidden md:flex md:space-x-2">
           <BuutonAccount />
           <ButtonLogin />
         </div>
         <MenuToogle handleMenu={handleMenu} menuIsOpen={menuIsOpen} />
       </div>
+      <Modal />
     </>
   )
 }

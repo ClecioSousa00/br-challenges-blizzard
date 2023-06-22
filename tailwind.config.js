@@ -17,6 +17,7 @@ module.exports = {
         shadowSlide:
           'linear-gradient(180deg, rgba(0, 0, 0, 0.3) 18%, rgba(0,0,0,0) 100%)',
         bgFooter: "url('/footer-background.png')",
+        bgModal: "url('/imageModal.png')",
       },
       fontFamily: {
         sans: ['var(--font-poppins)'],
