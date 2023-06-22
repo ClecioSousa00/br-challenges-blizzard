@@ -11,6 +11,7 @@ export const NavBar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
   const [optionIsOpenGame, setOptionIsOpenGame] = useState(false)
   const [optionIsOpenSports, setOptionIsOpenSports] = useState(false)
+  const [openModal, setOpenModal] = useState(false)
 
   const handleMenu = (): void => {
     setMenuIsOpen(!menuIsOpen)
@@ -23,6 +24,10 @@ export const NavBar = () => {
   const handleOptionsSports = () => {
     setOptionIsOpenGame(false)
     setOptionIsOpenSports(!optionIsOpenSports)
+  }
+
+  const showModal = () => {
+    setOpenModal(!openModal)
   }
 
   return (
@@ -52,19 +57,19 @@ export const NavBar = () => {
           <li>Notícias</li>
           <li>Suporte</li>
         </ul>
-        <div className="mt-8 flex justify-center space-x-2 md:hidden">
+        <div className="mt-8 flex justify-center gap-2 md:hidden">
           <BuutonAccount />
-          <ButtonLogin />
+          <ButtonLogin showModal={showModal} />
         </div>
       </nav>
       <div className="z-50 justify-between md:flex md:items-center md:gap-20">
-        <div className="hidden md:flex md:space-x-2">
+        <div className="hidden md:flex md:gap-4">
           <BuutonAccount />
-          <ButtonLogin />
+          <ButtonLogin showModal={showModal} />
         </div>
         <MenuToogle handleMenu={handleMenu} menuIsOpen={menuIsOpen} />
       </div>
-      <Modal />
+      {openModal && <Modal showModal={showModal} />}
     </>
   )
 }
