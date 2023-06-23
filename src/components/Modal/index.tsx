@@ -8,6 +8,7 @@ import { SvgFacebook } from '../icons/SvgFacebook'
 import Link from 'next/link'
 import { Form } from '../Form'
 import { ButtonSocialMedia } from '../buttonSocialMedia'
+import { motion } from 'framer-motion'
 
 type ModalProps = {
   showModal: () => void
@@ -16,7 +17,21 @@ type ModalProps = {
 export const Modal = ({ showModal }: ModalProps) => {
   return (
     <div className="fixed inset-0 z-50 flex h-screen w-screen items-center justify-center  bg-bgMenu">
-      <div className=" w-full max-w-2xl bg-bgModal object-cover object-center p-3">
+      <motion.div
+        className=" w-full max-w-2xl bg-bgModal object-cover object-center p-3"
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{
+          duration: 0.3,
+          ease: [0, 0.71, 0.2, 1.01],
+          scale: {
+            type: 'spring',
+            damping: 5,
+            stiffness: 100,
+            restDelta: 0.001,
+          },
+        }}
+      >
         <button
           onClick={() => {
             showModal()
@@ -50,7 +65,7 @@ export const Modal = ({ showModal }: ModalProps) => {
             </Link>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   )
 }

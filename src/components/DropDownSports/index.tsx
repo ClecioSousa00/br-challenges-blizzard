@@ -1,6 +1,7 @@
 import { sportsIconsDropdown } from '../DropdownGames/gamesInfos'
 import Image from 'next/image'
 import icontournamnet from '../../assets/images/icosDropdown/icon-torneio.svg'
+import { motion } from 'framer-motion'
 
 export const DropDownSports = () => {
   const showCardsGames = () => {
@@ -16,7 +17,12 @@ export const DropDownSports = () => {
   }
 
   return (
-    <div className=" absolute left-0 z-20 flex h-[80vh] w-screen flex-col items-center bg-bgMenu pt-2 md:justify-center lg:fixed lg:top-0 lg:-z-50 lg:h-[75vh] lg:justify-end ">
+    <motion.div
+      className=" absolute left-0 z-20 flex h-[80vh] w-screen flex-col items-center bg-bgMenu pt-2 md:justify-center lg:fixed lg:top-0 lg:-z-50 lg:h-[75vh] lg:justify-end "
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div className="mb-3 grid grid-cols-3 gap-3 md:grid-cols-5 lg:flex-1  lg:gap-x-16 lg:self-center">
         {showCardsGames()}
       </div>
@@ -24,6 +30,6 @@ export const DropDownSports = () => {
         <Image src={icontournamnet} alt="Icone de taça" />
         <p className="text-sm">Torneios da comunidade</p>
       </div>
-    </div>
+    </motion.div>
   )
 }

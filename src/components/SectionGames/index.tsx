@@ -21,11 +21,11 @@ const showGamesCard = async () => {
     return (
       <div className="" key={index}>
         <div
-          className="relative h-[13.375rem] w-[9.625rem] overflow-hidden rounded object-cover  object-center md:h-[17.375rem] md:w-[12.75rem] 
-          lg:h-[24rem] lg:w-[17.5rem]"
+          className="relative h-[13.375rem] w-[9.625rem] cursor-pointer overflow-hidden rounded object-cover  object-center transition-all hover:-translate-y-6 
+          md:h-[17.375rem] md:w-[12.75rem] lg:h-[24rem] lg:w-[17.5rem]"
         >
           <Image
-            className="w-full"
+            className="w-full  transition-all duration-500 hover:scale-110"
             src={game.image}
             width={1000}
             height={1000}
@@ -57,8 +57,8 @@ export default async function SectionGames() {
     <section className="grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-3 md:gap-x-8 md:gap-y-10 lg:grid-cols-4 lg:gap-y-12">
       {await showGamesCard()}
       <div
-        className="flex h-[13.375rem] w-[9.625rem] flex-col items-center justify-center gap-y-4 rounded border-2
-       border-borderCard md:h-[17.375rem] md:w-[12.75rem] md:gap-y-8 lg:h-[24rem] lg:w-[17.5rem]"
+        className="flex h-[13.375rem] w-[9.625rem] cursor-pointer flex-col items-center justify-center gap-y-4 rounded border-2
+       border-borderCard transition-all hover:border-white md:h-[17.375rem] md:w-[12.75rem] md:gap-y-8 lg:h-[24rem] lg:w-[17.5rem]"
       >
         <Image
           className="w-16 md:w-28"

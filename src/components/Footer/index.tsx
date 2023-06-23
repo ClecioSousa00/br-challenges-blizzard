@@ -1,8 +1,6 @@
 import Image from 'next/image'
 
 import logoBattleNet from '../../assets/images/logo-battle-net.png'
-import app from '../../assets/images/footer/app.png'
-import appMini from '../../assets/images/footer/appMini.png'
 
 import { SvgPage } from '../icons/SvgPage'
 import { SvgConect } from '../icons/SvgConect'
@@ -11,11 +9,12 @@ import { ButtonHero } from '../ButtonHero'
 import { SvgWin } from '../icons/SvgWin'
 import { SvgMobile } from '../icons/SvgMobile'
 import { IconsFooter } from '../IconsFooter'
+import { FooterImage } from './FooterImage/inde'
 
 export const Footer = () => {
   return (
-    <footer className="mb-7 w-full bg-bgFooter bg-center bg-no-repeat object-cover py-16 md:flex md:items-center lg:gap-36">
-      <div className="pl-6 md:min-w-[360px] md:pl-12 lg:pl-28">
+    <footer className="mb-7 w-full bg-bgFooter bg-center bg-no-repeat object-cover py-16 md:flex md:items-center lg:gap-8">
+      <div className="pl-6  md:pl-12 lg:pl-28">
         <Image src={logoBattleNet} alt="Logo Battlenet" />
         <h3 className="mb-8 mt-8 max-w-[204px] text-[1.75rem] font-bold">
           Baixe agora o battle.net
@@ -43,20 +42,7 @@ export const Footer = () => {
         </div>
       </div>
       <div className="relative mt-10 overflow-hidden">
-        <div className=" mb-8 w-[530px] md:w-[900px]">
-          <Image
-            className="w-full"
-            src={app}
-            alt="Imagem da plataforma blizzard"
-          />
-        </div>
-        <div className=" absolute -bottom-4 -right-8 h-[170px] w-[276px] md:-right-[280px] md:h-[306px]  md:w-[576px] lg:-bottom-1 lg:-right-28">
-          <Image
-            className="w-full"
-            src={appMini}
-            alt="imagem de word of warcraft da plataforma blizzard"
-          />
-        </div>
+        <FooterImage />
       </div>
     </footer>
   )

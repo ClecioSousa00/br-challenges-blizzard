@@ -34,11 +34,11 @@ export const InfosSlide = ({
 
   return (
     <div className="absolute top-0 z-30  flex h-full w-full items-center px-5 md:justify-between lg:justify-end lg:gap-44 lg:px-24 2xl:justify-around">
-      <div className="max-w-[18rem] md:max-w-[35.125rem]">
-        <h1 className=" text-[2.5rem] font-bold leading-10 md:text-6xl">
+      <div className=" md:max-w-[35.125rem]">
+        <h1 className=" text-[2.5rem] font-bold leading-[2.8rem] md:text-6xl md:leading-tight">
           {title}
         </h1>
-        <p className="mb-8 mt-4 text-lg font-normal leading-5 md:text-lg">
+        <p className="mb-8 mt-4 text-lg font-normal leading-snug tracking-wide  md:text-lg">
           {subTitle}
         </p>
         <ButtonHero className="flex items-center gap-2">
