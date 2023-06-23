@@ -6,28 +6,23 @@ import { BuutonAccount } from '../ButtonAccount'
 import { ButtonLogin } from '../ButtonLogin'
 import { ButtonOptions } from '../ButtonOptions'
 import { Modal } from '../Modal'
+import { useModal } from '@/Hooks/useModal'
+import { useOpenOptions } from '@/Hooks/useOpenOptions'
+import { DropdownGames } from '../DropdownGames'
+import { DropDownSports } from '../DropDownSports'
 
 export const NavBar = () => {
   const [menuIsOpen, setMenuIsOpen] = useState(false)
-  const [optionIsOpenGame, setOptionIsOpenGame] = useState(false)
-  const [optionIsOpenSports, setOptionIsOpenSports] = useState(false)
-  const [openModal, setOpenModal] = useState(false)
+  const { openModal, showModal } = useModal()
+  const {
+    optionIsOpenGame,
+    optionIsOpenSports,
+    handleOptionsGame,
+    handleOptionsSports,
+  } = useOpenOptions()
 
   const handleMenu = (): void => {
     setMenuIsOpen(!menuIsOpen)
-  }
-
-  const handleOptionsGame = () => {
-    setOptionIsOpenSports(false)
-    setOptionIsOpenGame(!optionIsOpenGame)
-  }
-  const handleOptionsSports = () => {
-    setOptionIsOpenGame(false)
-    setOptionIsOpenSports(!optionIsOpenSports)
-  }
-
-  const showModal = () => {
-    setOpenModal(!openModal)
   }
 
   return (
@@ -45,6 +40,7 @@ export const NavBar = () => {
               handleOptions={handleOptionsGame}
               optionIsOpen={optionIsOpenGame}
             />
+            {optionIsOpenGame && <DropdownGames />}
           </li>
           <li>
             <ButtonOptions
@@ -52,10 +48,11 @@ export const NavBar = () => {
               handleOptions={handleOptionsSports}
               optionIsOpen={optionIsOpenSports}
             />
+            {optionIsOpenSports && <DropDownSports />}
           </li>
-          <li>Loja</li>
-          <li>Notícias</li>
-          <li>Suporte</li>
+          <li className="cursor-pointer ">Loja</li>
+          <li className="cursor-pointer ">Notícias</li>
+          <li className="cursor-pointer ">Suporte</li>
         </ul>
         <div className="mt-8 flex justify-center gap-2 md:hidden">
           <BuutonAccount />

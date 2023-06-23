@@ -1,7 +1,5 @@
 import { cn } from '@/app/lib/utils'
 import { FaChevronDown } from 'react-icons/fa'
-import { DropdownGames } from '../DropdownGames'
-import { DropDownSports } from '../DropDownSports'
 
 type buttonProps = {
   handleOptions: () => void
@@ -14,23 +12,22 @@ export const ButtonOptions = ({
   handleOptions,
   optionIsOpen,
 }: buttonProps) => {
-  const handleClick = () => {
-    handleOptions()
-  }
-
   return (
     <>
-      <button onClick={handleClick} className="flex items-center gap-3">
+      <button
+        onClick={() => {
+          handleOptions()
+        }}
+        className={cn(
+          'flex items-center gap-3',
+          optionIsOpen && 'text-buttonBg',
+        )}
+      >
         {text}{' '}
         <FaChevronDown
-          className={cn(
-            'transition-all',
-            optionIsOpen && 'rotate-180 text-buttonBg ',
-          )}
+          className={cn('transition-all', optionIsOpen && 'rotate-180  ')}
         />{' '}
       </button>
-      {optionIsOpen && text === 'Jogos' ? <DropdownGames /> : ''}
-      {optionIsOpen && text === 'Esportes' ? <DropDownSports /> : ''}
     </>
   )
 }
