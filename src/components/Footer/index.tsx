@@ -10,12 +10,13 @@ import { SvgWin } from '../icons/SvgWin'
 import { SvgMobile } from '../icons/SvgMobile'
 import { IconsFooter } from '../IconsFooter'
 import { FooterImage } from './FooterImage/inde'
+import Link from 'next/link'
 
 export const Footer = () => {
   return (
-    <footer className="mb-7 w-full bg-bgFooter bg-center bg-no-repeat object-cover py-16 md:flex md:items-center lg:gap-8">
-      <div className="pl-6  md:pl-12 lg:pl-28">
-        <Image src={logoBattleNet} alt="Logo Battlenet" />
+    <footer className="mb-7 w-full bg-bgFooter bg-center bg-no-repeat object-cover md:flex md:items-center lg:gap-8">
+      <div className=" pl-6 pt-10 md:pl-12 lg:pl-28">
+        <Image className="mt-8" src={logoBattleNet} alt="Logo Battlenet" />
         <h3 className="mb-8 mt-8 max-w-[204px] text-[1.75rem] font-bold">
           Baixe agora o battle.net
         </h3>
@@ -37,7 +38,10 @@ export const Footer = () => {
         <div className="mt-10 flex items-center gap-4">
           <SvgMobile />
           <p className="max-w-[196px]  text-sm font-semibold leading-5 tracking-wider">
-            Também disponível como <u>aplicativo móvel</u>
+            Também disponível como{' '}
+            <Link className="underline" href="#">
+              aplicativo móvel
+            </Link>
           </p>
         </div>
       </div>
