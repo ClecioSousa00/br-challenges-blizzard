@@ -33,6 +33,7 @@ export const Modal = ({ showModal }: ModalProps) => {
         }}
       >
         <button
+          data-testid="button-close"
           onClick={() => {
             showModal()
           }}

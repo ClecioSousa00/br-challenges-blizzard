@@ -56,7 +56,7 @@ export const NavBar = () => {
         </ul>
         <div className="mt-8 flex justify-center gap-2 md:hidden">
           <BuutonAccount />
-          <ButtonLogin showModal={showModal} />
+          <ButtonLogin data-testid="button-login" showModal={showModal} />
         </div>
       </nav>
       <div className="z-50 justify-between md:flex md:items-center md:gap-20">
@@ -66,7 +66,7 @@ export const NavBar = () => {
         </div>
         <MenuToogle handleMenu={handleMenu} menuIsOpen={menuIsOpen} />
       </div>
-      {openModal && <Modal showModal={showModal} />}
+      {openModal && <Modal data-testid="modal" showModal={showModal} />}
     </>
   )
 }
